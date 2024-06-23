@@ -1,0 +1,172 @@
+add_newline = true
+
+[aws]
+format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
+
+[cmake]
+format = '\[[$symbol($version)]($style)\]'
+
+[cmd_duration]
+format = "[⏱ $duration]($style)"
+
+[conda]
+format = '\[[$symbol$environment]($style)\]'
+
+[crystal]
+format = '\[[$symbol($version)]($style)\]'
+
+[dart]
+format = '\[[$symbol($version)]($style)\]'
+
+[deno]
+format = '\[[$symbol($version)]($style)\]'
+
+[docker_context]
+format = '\[[$symbol$context]($style)\]'
+
+[dotnet]
+format = '\[[$symbol($version)(🎯 $tfm)]($style)\]'
+
+[elixir]
+format = '\[[$symbol($version \(OTP $otp_version\))]($style)\]'
+
+[elm]
+format = '\[[$symbol($version)]($style)\]'
+
+[erlang]
+format = '\[[$symbol($version)]($style)\]'
+
+[gcloud]
+format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
+
+[git_branch]
+format = '\[[$symbol$branch]($style)\]'
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
+
+[golang]
+format = '\[[$symbol($version)]($style)\]'
+
+[helm]
+format = '\[[$symbol($version)]($style)\]'
+
+[hg_branch]
+format = '\[[$symbol$branch]($style)\]'
+
+[java]
+format = '\[[$symbol($version)]($style)\]'
+
+[julia]
+format = '\[[$symbol($version)]($style)\]'
+
+[kotlin]
+format = '\[[$symbol($version)]($style)\]'
+
+[kubernetes]
+format = '\[[$symbol$context( \($namespace\))]($style)\]'
+
+[lua]
+format = '\[[$symbol($version)]($style)\]'
+
+[memory_usage]
+format = '\[$symbol[$ram( | $swap)]($style)\]'
+
+[nim]
+format = '\[[$symbol($version)]($style)\]'
+
+[nix_shell]
+format = '\[[$symbol$state( \($name\))]($style)\]'
+
+[nodejs]
+disabled = false
+format   = '\[[$symbol($version)]($style)\]'
+
+[ocaml]
+format = '\[[$symbol($version)(\($switch_indicator$switch_name\))]($style)\]'
+
+[openstack]
+format = '\[[$symbol$cloud(\($project\))]($style)\]'
+
+[package]
+disabled = true
+format = '\[[$symbol$version]($style)\]'
+
+[perl]
+format = '\[[$symbol($version)]($style)\]'
+
+[php]
+format = '\[[$symbol($version)]($style)\]'
+
+[purescript]
+format = '\[[$symbol($version)]($style)\]'
+
+[python]
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+
+[red]
+format = '\[[$symbol($version)]($style)\]'
+
+[ruby]
+format = '\[[$symbol($version)]($style)\]'
+
+[rust]
+format = '\[[$symbol($version)]($style)\]'
+
+[scala]
+format = '\[[$symbol($version)]($style)\]'
+
+[swift]
+format = '\[[$symbol($version)]($style)\]'
+
+[terraform]
+format = '\[[$symbol$workspace]($style)\]'
+
+[time]
+format = '\[[$time]($style)\]'
+
+[username]
+format = '\[[$user]($style)\]'
+
+[vagrant]
+format = '\[[$symbol($version)]($style)\]'
+
+[vlang]
+format = '\[[$symbol($version)]($style)\]'
+
+[zig]
+format = '\[[$symbol($version)]($style)\]'
+
+[character]
+# success_symbol = "[➜](bold green)" 
+
+[palettes.catppuccin_macchiato]
+rosewater = "#f4dbd6"
+flamingo = "#f0c6c6"
+pink = "#f5bde6"
+mauve = "#c6a0f6"
+red = "#ed8796"
+maroon = "#ee99a0"
+peach = "#f5a97f"
+yellow = "#eed49f"
+green = "#a6da95"
+teal = "#8bd5ca"
+sky = "#91d7e3"
+sapphire = "#7dc4e4"
+blue = "#8aadf4"
+lavender = "#b7bdf8"
+text = "#cad3f5"
+subtext1 = "#b8c0e0"
+subtext0 = "#a5adcb"
+overlay2 = "#939ab7"
+overlay1 = "#8087a2"
+overlay0 = "#6e738d"
+surface2 = "#5b6078"
+surface1 = "#494d64"
+surface0 = "#363a4f"
+base = "#24273a"
+mantle = "#1e2030"
+crust = "#181926"
+
+
+

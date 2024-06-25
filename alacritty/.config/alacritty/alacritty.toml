@@ -5,7 +5,7 @@ live_config_reload = true
 TERM = "xterm-256color"
 
 [font]
-size = 16.0
+size = 18.0
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
@@ -23,6 +23,17 @@ style = "Italic"
 family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.offset]
+x = 0
+y = 0
+
+[mouse]
+# hide_when_typing = true
+
 [window]
 decorations = "buttonless"
 dynamic_padding = false
@@ -30,5 +41,8 @@ opacity = 0.8
 startup_mode = "Windowed"
 
 [window.padding]
-x = 14
+x = 10
 y = 10
+
+[shell]
+program = "/bin/zsh"

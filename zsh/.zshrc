@@ -4,6 +4,8 @@ if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+export EDITOR='nvim'
+
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -26,7 +28,6 @@ zinit light Aloxaf/fzf-tab
 autoload -Uz compinit && compinit
 
 zinit cdreplay -q
-
 
 # Keybindings
 bindkey -e
@@ -56,22 +57,26 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # Aliases
-alias ls='ls --color'
-
 alias gco='git checkout'
 alias gst='git status'
 alias gcm='git checkout main'
 
 alias ls='lsd'
 alias l='ls -l'
-alias la='ls -a'
+alias lsa='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+
+alias lg='lazygit'
+
+alias t='tmuxinator'
+alias monstera='tmuxinator start monstera'
+alias stopmonstera='tmuxinator stop monstera'
 
 alias fnm='find . -name "node_modules" -type d -prune -print | xargs du -chs'
 alias tnm='find . -name 'node_modules' -type d -prune -print -exec trash-put '{}' \;'
 
 # Shell integrations
 eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init zsh)"
 eval "$(oh-my-posh init zsh --config ~/.mytheme.omp.toml)"

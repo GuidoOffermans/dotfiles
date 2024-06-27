@@ -1,10 +1,17 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export PATH="$HOME/bin:$PATH"
+
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 export EDITOR='nvim'
+
+ export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -73,10 +80,11 @@ alias t='tmuxinator'
 alias monstera='tmuxinator start monstera'
 alias stopmonstera='tmuxinator stop monstera'
 
-alias fnm='find . -name "node_modules" -type d -prune -print | xargs du -chs'
-alias tnm='find . -name 'node_modules' -type d -prune -print -exec trash-put '{}' \;'
+alias findnm='find . -name "node_modules" -type d -prune -print | xargs du -chs'
+alias deletenm='find . -name 'node_modules' -type d -prune -print -exec trash-put '{}' \;'
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
+eval "$(zellij setup --generate-auto-start zsh)"
 eval "$(oh-my-posh init zsh --config ~/.mytheme.omp.toml)"

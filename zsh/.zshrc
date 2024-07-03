@@ -1,6 +1,7 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$HOME/bin:$PATH"
+export PATH="$PATH:/Users/guidooffermans/.dotnet/tools"
 
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -82,6 +83,27 @@ alias stopmonstera='tmuxinator stop monstera'
 
 alias findnm='find . -name "node_modules" -type d -prune -print | xargs du -chs'
 alias deletenm='find . -name 'node_modules' -type d -prune -print -exec trash-put '{}' \;'
+
+
+
+# zsh parameter completion for the dotnet CLI
+
+_dotnet_zsh_complete()
+{
+  local completions=("$(dotnet complete "$words")")
+
+  # If the completion list is empty, just continue with filename selection
+  if [ -z "$completions" ]
+  then
+    _arguments '*::arguments: _normal'
+    return
+  fi
+
+  # This is not a variable assignment, don't remove spaces!
+  _values = "${(ps:\n:)completions}"
+}
+
+compdef _dotnet_zsh_complete dotnet
 
 # Shell integrations
 eval "$(fzf --zsh)"

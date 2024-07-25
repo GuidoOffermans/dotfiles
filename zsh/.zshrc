@@ -8,6 +8,9 @@ if [[ -f "/opt/homebrew/bin/brew" ]]; then
 fi
 
 export EDITOR='nvim'
+export SHELL='/bin/zsh'
+
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
  export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm

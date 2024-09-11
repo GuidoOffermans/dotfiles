@@ -2,6 +2,7 @@
 
 export PATH="$HOME/bin:$PATH"
 export PATH="$PATH:/Users/guidooffermans/.dotnet/tools"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -113,3 +114,5 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(zellij setup --generate-auto-start zsh)"
 eval "$(oh-my-posh init zsh --config ~/.mytheme.omp.toml)"
+
+eval $(thefuck --alias)

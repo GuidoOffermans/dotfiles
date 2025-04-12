@@ -88,6 +88,8 @@ alias stopmonstera='tmuxinator stop monstera'
 alias findnm='find . -name "node_modules" -type d -prune -print | xargs du -chs'
 alias deletenm='find . -name 'node_modules' -type d -prune -print -exec trash-put '{}' \;'
 
+alias vim=nvim
+
 
 
 # zsh parameter completion for the dotnet CLI
@@ -112,7 +114,11 @@ compdef _dotnet_zsh_complete dotnet
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
-eval "$(zellij setup --generate-auto-start zsh)"
+# eval "$(zellij setup --generate-auto-start zsh)"
 eval "$(oh-my-posh init zsh --config ~/.mytheme.omp.toml)"
 
 eval $(thefuck --alias)
+
+export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="/Users/guidooffermans/Games/Odin:$PATH"

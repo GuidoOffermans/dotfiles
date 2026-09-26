@@ -1,0 +1,17 @@
+# Windows-only git settings, overriding Git for Windows' system defaults
+# (C:\Program Files\Git\etc\gitconfig). Git reads this as a global config
+# alongside ~/.gitconfig, which still wins for anything set in both.
+[user]
+	name = Guido Offermans
+	email = dev@guidooffermans.com
+[init]
+	defaultBranch = main
+[core]
+	# system default is true (CRLF on checkout), which breaks shell scripts;
+	# keep LF in the working tree, strip any CR on commit
+	autocrlf = input
+	# system default is false (symlinks checked out as plain text files);
+	# works now that Developer Mode allows unprivileged symlinks
+	symlinks = true
+	# allow paths over 260 chars (deep target/ and node_modules trees)
+	longpaths = true

@@ -1,0 +1,2 @@
+# Keep LF everywhere, including Windows checkouts (bash breaks on CRLF)
+* text=auto eol=lf

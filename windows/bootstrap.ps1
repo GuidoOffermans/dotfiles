@@ -140,6 +140,10 @@ Step 'GNU Stow'
 & $bash -lc "'$here/install-stow.sh'"
 if ($LASTEXITCODE -ne 0) { throw 'stow install failed' }
 
+Step 'ble.sh'
+& $bash -lc "'$here/install-blesh.sh'"
+if ($LASTEXITCODE -ne 0) { throw 'ble.sh install failed' }
+
 Step 'Linking dotfiles'
 & $bash -lc "'$here/install.sh'"
 if ($LASTEXITCODE -ne 0) { throw 'linking failed' }

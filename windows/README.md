@@ -4,7 +4,7 @@ Stow packages for Windows, used from Git Bash. Also links the shared `ohmyposh` 
 
 | Package | Target |
 |---|---|
-| `bash` | `~` (Git Bash `.bashrc` / `.bash_profile`) |
+| `bash` | `~` (Git Bash `.bashrc` / `.bash_profile`, ble.sh's `.blerc`) |
 | `git` | `~/.config/git/config`: Windows-only git settings (LF line endings, real symlinks, long paths) |
 | `windows-terminal` | `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState` |
 
@@ -14,6 +14,7 @@ Stow packages for Windows, used from Git Bash. Also links the shared `ohmyposh` 
 - Git keeps LF line endings, checks out symlinks as symlinks, and handles paths over 260 chars, overriding Git for Windows' defaults
 - `XDG_CONFIG_HOME=~/.config`, so XDG-aware tools (nvim, gh, lazygit, ...) read config from the same place as on Mac/Linux
 - fzf key bindings: `Ctrl+R` history, `Ctrl+T` files, `Alt+C` cd
+- [ble.sh](https://github.com/akinomyoga/ble.sh): syntax highlighting and fish-style history suggestions as you type (`→` accepts). Tuned in `bash/.blerc`; update with `ble-update`
 
 ## New machine
 
@@ -33,7 +34,8 @@ powershell -ExecutionPolicy Bypass -File $HOME\dotfiles\windows\bootstrap.ps1
 6. Sets the Rust stable toolchain
 7. Installs the JetBrains Mono Nerd Font
 8. Installs GNU Stow into `~/bin` (`install-stow.sh`; not on winget, but it's pure Perl and Git Bash ships Perl)
-9. Links everything (`install.sh`)
+9. Installs ble.sh into `~/.local/share/blesh` (`install-blesh.sh`)
+10. Links everything (`install.sh`)
 
 ## Day to day
 

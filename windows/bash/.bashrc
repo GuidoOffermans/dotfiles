@@ -1,3 +1,8 @@
+# ble.sh: syntax highlighting + autosuggestions (https://github.com/akinomyoga/ble.sh)
+# must be sourced first and attached last (see bottom of file)
+[[ $- == *i* && -f ~/.local/share/blesh/ble.sh ]] &&
+    source ~/.local/share/blesh/ble.sh --noattach
+
 # make `ln -s` create real Windows symlinks instead of silently copying
 # (needs Developer Mode; fails loudly rather than falling back to a copy)
 export MSYS=winsymlinks:nativestrict
@@ -14,7 +19,13 @@ fi
 
 # fzf: Ctrl+R history, Ctrl+T files, Alt+C cd into dir
 if command -v fzf >/dev/null 2>&1; then
-    eval "$(fzf --bash)"
+    if [[ ${BLE_VERSION-} ]]; then
+        # fzf's own bindings use `bind -x`, which ble.sh doesn't handle well
+        ble-import -d integration/fzf-completion
+        ble-import -d integration/fzf-key-bindings
+    else
+        eval "$(fzf --bash)"
+    fi
 fi
 
 # zoxide: smart cd (use `z <dir>`, `zi` for interactive pick)
@@ -26,3 +37,6 @@ if command -v zoxide >/dev/null 2>&1; then
     # is ever recorded. Redefine it correctly.
     __zoxide_pwd() { \command cygpath -w "$(\builtin pwd -L)"; }
 fi
+
+# ble.sh: attach after everything else has set up prompts and key bindings
+[[ ! ${BLE_VERSION-} ]] || ble-attach

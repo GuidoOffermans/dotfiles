@@ -1,0 +1,13 @@
+# ble.sh settings (https://github.com/akinomyoga/ble.sh), loaded by ble.sh itself
+
+# autosuggestions: only from history (fish-style), not from completion
+# candidates like files/commands; and wait a bit before showing one
+bleopt complete_auto_complete_opts=syntax-disabled:suppress-inside-line
+bleopt complete_auto_delay=300
+
+# no beep when completion finds nothing (or on unknown key sequences)
+bleopt edit_bell=
+bleopt decode_error_kseq_abell=
+
+# don't paint half-typed commands (unknown until finished) red
+ble-face syntax_error=none

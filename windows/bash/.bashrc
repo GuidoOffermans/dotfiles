@@ -1,3 +1,6 @@
+# Windows sets USERNAME, not USER; ble.sh (and other Unix tools) expect USER
+export USER="${USER:-$(id -un)}"
+
 # ble.sh: syntax highlighting + autosuggestions (https://github.com/akinomyoga/ble.sh)
 # must be sourced first and attached last (see bottom of file)
 [[ $- == *i* && -f ~/.local/share/blesh/ble.sh ]] &&

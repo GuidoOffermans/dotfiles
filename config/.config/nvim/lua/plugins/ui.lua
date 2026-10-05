@@ -1,29 +1,19 @@
-return {
-    --   {
-    --     "folke/noice.nvim",
-    --     event = "VeryLazy",
-    --     opts = {},
-    --     dependencies = {
-    --       "MunifTanjim/nui.nvim",
-    --       "rcarriga/nvim-notify",
-    --     },
-    --     config = function()
-    --       require("noice").setup {
-    --         lsp = {
-    --           override = {
-    --             ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-    --             ["vim.lsp.util.stylize_markdown"] = true,
-    --             ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
-    --           },
-    --         },
-    --         presets = {
-    --           bottom_search = true, -- use a classic bottom cmdline for search
-    --           command_palette = true, -- position the cmdline and popupmenu together
-    --           long_message_to_split = true, -- long messages will be sent to a split
-    --           inc_rename = false, -- enables an input dialog for inc-rename.nvim
-    --           lsp_doc_border = false, -- add a border to hover docs and signature help
-    --         },
-    --       }
-    --     end,
-    --   },
+require("ember").setup {
+  variant = "ember-soft", -- "ember" | "ember-soft" | "ember-light" | "ember-lighter" | "ember-auto"
+}
+vim.cmd.colorscheme "ember-soft"
+
+require("gitsigns").setup()
+
+local wk = require "which-key"
+wk.setup()
+wk.add {
+  { "<leader>b", group = "buffer" },
+  { "<leader>c", group = "code" },
+  { "<leader>f", group = "file/find" },
+  { "<leader>g", group = "git" },
+  { "<leader>p", group = "plugins" },
+  { "<leader>q", group = "quit" },
+  { "<leader>s", group = "search" },
+  { "<leader>u", group = "ui" },
 }

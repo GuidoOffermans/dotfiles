@@ -144,6 +144,18 @@ Step 'ble.sh'
 & $bash -lc "'$here/install-blesh.sh'"
 if ($LASTEXITCODE -ne 0) { throw 'ble.sh install failed' }
 
+Step 'Neovim nightly'
+& $bash -lc "'$here/install-nvim.sh'"
+if ($LASTEXITCODE -ne 0) { throw 'neovim install failed' }
+$nvimBin = "$env:LOCALAPPDATA\Programs\nvim-nightly\bin"
+$userPath = [Environment]::GetEnvironmentVariable('Path', 'User')
+if (($userPath -split ';') -contains $nvimBin) {
+    Write-Host 'already on PATH'
+} else {
+    [Environment]::SetEnvironmentVariable('Path', "$userPath;$nvimBin", 'User')
+    Write-Host "added $nvimBin to PATH"
+}
+
 Step 'Linking dotfiles'
 & $bash -lc "'$here/install.sh'"
 if ($LASTEXITCODE -ne 0) { throw 'linking failed' }

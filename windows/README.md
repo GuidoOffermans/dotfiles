@@ -7,6 +7,7 @@ Stow packages for Windows, used from Git Bash. Also links the shared `ohmyposh` 
 | `bash` | `~` (Git Bash `.bashrc` / `.bash_profile`, ble.sh's `.blerc`) |
 | `git` | `~/.config/git/config`: Windows-only git settings (LF line endings, real symlinks, long paths) |
 | `windows-terminal` | `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState` |
+| `nvim` (from `config/.config`) | `~/.config/nvim`; plugins via `vim.pack`, pinned in `nvim-pack-lock.json` |
 
 ## POSIX-like behaviour
 
@@ -35,10 +36,12 @@ powershell -ExecutionPolicy Bypass -File $HOME\dotfiles\windows\bootstrap.ps1
 7. Installs the JetBrains Mono Nerd Font
 8. Installs GNU Stow into `~/bin` (`install-stow.sh`; not on winget, but it's pure Perl and Git Bash ships Perl)
 9. Installs ble.sh into `~/.local/share/blesh` (`install-blesh.sh`)
-10. Links everything (`install.sh`)
+10. Installs the Neovim nightly into `%LOCALAPPDATA%\Programs\nvim-nightly` and adds it to `PATH` (`install-nvim.sh`; winget's nightly package fails its hash check)
+11. Links everything (`install.sh`)
 
 ## Day to day
 
 - Relink: `~/dotfiles/windows/install.sh` (`--delete` to unlink). Also idempotent: existing real files in the way are moved to timestamped `*.pre-stow.<date>` backups, never overwritten.
 - Add a tool: add its winget ID to `packages.json`
+- Update Neovim nightly: `~/dotfiles/windows/install-nvim.sh --update`. Update plugins inside nvim with `<leader>pu`, then commit `nvim-pack-lock.json`
 - Edited `windows-terminal/settings.json`? Run `install.sh` to make Terminal reload it; it doesn't notice changes made through the link on its own

@@ -55,6 +55,10 @@ STOW=(stow --verbose --no-folding "$MODE")
 
 # Shared packages from the main dotfiles repo
 "${STOW[@]}" --dir="$DOTFILES_DIR" --target="$HOME" ohmyposh
+# only nvim from config/.config: the rest there is macOS-only.
+# XDG_CONFIG_HOME=~/.config (bootstrap.ps1) makes nvim look here
+mkdir -p "$HOME/.config/nvim"
+"${STOW[@]}" --dir="$DOTFILES_DIR/config/.config" --target="$HOME/.config/nvim" nvim
 
 # Windows-only packages
 "${STOW[@]}" --dir="$WINDOWS_DIR" --target="$HOME" bash git

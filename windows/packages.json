@@ -22,6 +22,8 @@
         { "PackageIdentifier": "ajeetdsouza.zoxide" },
         { "PackageIdentifier": "junegunn.fzf" },
         { "PackageIdentifier": "JesseDuffield.lazygit" },
+        { "PackageIdentifier": "tree-sitter.tree-sitter-cli" },
+        { "PackageIdentifier": "OpenJS.NodeJS.LTS" },
         { "PackageIdentifier": "Docker.DockerDesktop" }
       ]
     }

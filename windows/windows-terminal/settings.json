@@ -1,23 +1,126 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
+    "actions": 
     [
-        { "command": { "action": "moveFocus", "direction": "left" }, "id": "User.FocusLeft" },
-        { "command": { "action": "moveFocus", "direction": "down" }, "id": "User.FocusDown" },
-        { "command": { "action": "moveFocus", "direction": "up" }, "id": "User.FocusUp" },
-        { "command": { "action": "moveFocus", "direction": "right" }, "id": "User.FocusRight" },
-        { "command": { "action": "resizePane", "direction": "left" }, "id": "User.ResizeLeft" },
-        { "command": { "action": "resizePane", "direction": "down" }, "id": "User.ResizeDown" },
-        { "command": { "action": "resizePane", "direction": "up" }, "id": "User.ResizeUp" },
-        { "command": { "action": "resizePane", "direction": "right" }, "id": "User.ResizeRight" },
-        { "command": { "action": "swapPane", "direction": "left" }, "id": "User.SwapLeft" },
-        { "command": { "action": "swapPane", "direction": "down" }, "id": "User.SwapDown" },
-        { "command": { "action": "swapPane", "direction": "up" }, "id": "User.SwapUp" },
-        { "command": { "action": "swapPane", "direction": "right" }, "id": "User.SwapRight" },
-        { "command": "togglePaneZoom", "id": "User.ZoomPane" },
-        { "command": { "action": "splitPane", "split": "right", "splitMode": "duplicate" }, "id": "User.SplitRight" },
-        { "command": { "action": "splitPane", "split": "down", "splitMode": "duplicate" }, "id": "User.SplitDown" }
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "up"
+            },
+            "id": "User.ResizeUp"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "left"
+            },
+            "id": "User.FocusLeft"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "down"
+            },
+            "id": "User.FocusDown"
+        },
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "left"
+            },
+            "id": "User.ResizeLeft"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "up"
+            },
+            "id": "User.FocusUp"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "right"
+            },
+            "id": "User.FocusRight"
+        },
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "down"
+            },
+            "id": "User.ResizeDown"
+        },
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "right"
+            },
+            "id": "User.ResizeRight"
+        },
+        {
+            "command": 
+            {
+                "action": "swapPane",
+                "direction": "left"
+            },
+            "id": "User.SwapLeft"
+        },
+        {
+            "command": 
+            {
+                "action": "swapPane",
+                "direction": "down"
+            },
+            "id": "User.SwapDown"
+        },
+        {
+            "command": 
+            {
+                "action": "swapPane",
+                "direction": "up"
+            },
+            "id": "User.SwapUp"
+        },
+        {
+            "command": 
+            {
+                "action": "swapPane",
+                "direction": "right"
+            },
+            "id": "User.SwapRight"
+        },
+        {
+            "command": "togglePaneZoom",
+            "id": "User.ZoomPane"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "right",
+                "splitMode": "duplicate"
+            },
+            "id": "User.SplitRight"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "down",
+                "splitMode": "duplicate"
+            },
+            "id": "User.SplitDown"
+        }
     ],
     "copyFormatting": "none",
     "copyOnSelect": false,
@@ -37,24 +140,69 @@
             "keys": "ctrl+shift+f"
         },
         {
+            "id": "User.FocusRight",
+            "keys": "alt+l"
+        },
+        {
+            "id": "User.FocusUp",
+            "keys": "alt+k"
+        },
+        {
             "id": "Terminal.DuplicatePaneAuto",
             "keys": "alt+shift+d"
         },
-        { "id": "User.FocusLeft", "keys": "alt+h" },
-        { "id": "User.FocusDown", "keys": "alt+j" },
-        { "id": "User.FocusUp", "keys": "alt+k" },
-        { "id": "User.FocusRight", "keys": "alt+l" },
-        { "id": "User.ResizeLeft", "keys": "alt+shift+h" },
-        { "id": "User.ResizeDown", "keys": "alt+shift+j" },
-        { "id": "User.ResizeUp", "keys": "alt+shift+k" },
-        { "id": "User.ResizeRight", "keys": "alt+shift+l" },
-        { "id": "User.SwapLeft", "keys": "ctrl+alt+h" },
-        { "id": "User.SwapDown", "keys": "ctrl+alt+j" },
-        { "id": "User.SwapUp", "keys": "ctrl+alt+k" },
-        { "id": "User.SwapRight", "keys": "ctrl+alt+l" },
-        { "id": "User.ZoomPane", "keys": "alt+z" },
-        { "id": "User.SplitRight", "keys": "alt+\\" },
-        { "id": "User.SplitDown", "keys": "alt+-" }
+        {
+            "id": "User.FocusLeft",
+            "keys": "alt+h"
+        },
+        {
+            "id": "User.FocusDown",
+            "keys": "alt+j"
+        },
+        {
+            "id": "User.ResizeLeft",
+            "keys": "alt+shift+h"
+        },
+        {
+            "id": "User.ResizeDown",
+            "keys": "alt+shift+j"
+        },
+        {
+            "id": "User.ResizeUp",
+            "keys": "alt+shift+k"
+        },
+        {
+            "id": "User.ResizeRight",
+            "keys": "alt+shift+l"
+        },
+        {
+            "id": "User.SwapLeft",
+            "keys": "ctrl+alt+h"
+        },
+        {
+            "id": "User.SwapDown",
+            "keys": "ctrl+alt+j"
+        },
+        {
+            "id": "User.SwapRight",
+            "keys": "ctrl+alt+l"
+        },
+        {
+            "id": "User.SwapUp",
+            "keys": "ctrl+alt+k"
+        },
+        {
+            "id": "User.ZoomPane",
+            "keys": "alt+z"
+        },
+        {
+            "id": "User.SplitRight",
+            "keys": "alt+\\"
+        },
+        {
+            "id": "User.SplitDown",
+            "keys": "alt+minus"
+        }
     ],
     "newTabMenu": 
     [
@@ -64,13 +212,14 @@
     ],
     "profiles": 
     {
-        "defaults":
+        "defaults": 
         {
             "colorScheme": "Ember Soft",
-            "font":
+            "font": 
             {
                 "face": "JetBrainsMono NF"
-            }
+            },
+            "padding": "0"
         },
         "list": 
         [
@@ -111,33 +260,51 @@
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+            },
+            {
+                "guid": "{2674c340-04af-5822-a821-7f2eb729b5e9}",
+                "hidden": false,
+                "name": "podman-machine-default",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{a8808c94-1b04-5d71-b74d-10276a89deb1}",
+                "hidden": false,
+                "name": "podman-machine-default",
+                "source": "Microsoft.WSL"
             }
         ]
     },
-    "schemes":
+    "schemes": 
     [
         {
-            "name": "Ember Soft",
             "background": "#242320",
-            "foreground": "#D8D0C0",
-            "cursorColor": "#E08060",
-            "selectionBackground": "#3A3836",
             "black": "#1C1B19",
-            "red": "#E08060",
-            "green": "#8A9868",
-            "yellow": "#C8B468",
             "blue": "#7890A0",
-            "purple": "#B07878",
-            "cyan": "#80A090",
-            "white": "#D8D0C0",
             "brightBlack": "#1C1B19",
-            "brightRed": "#E08060",
-            "brightGreen": "#8A9868",
-            "brightYellow": "#C8B468",
             "brightBlue": "#7890A0",
-            "brightPurple": "#B07878",
             "brightCyan": "#80A090",
-            "brightWhite": "#D8D0C0"
+            "brightGreen": "#8A9868",
+            "brightPurple": "#B07878",
+            "brightRed": "#E08060",
+            "brightWhite": "#D8D0C0",
+            "brightYellow": "#C8B468",
+            "cursorColor": "#E08060",
+            "cyan": "#80A090",
+            "foreground": "#D8D0C0",
+            "green": "#8A9868",
+            "name": "Ember Soft",
+            "purple": "#B07878",
+            "red": "#E08060",
+            "selectionBackground": "#3A3836",
+            "white": "#D8D0C0",
+            "yellow": "#C8B468"
         }
     ],
     "themes": []

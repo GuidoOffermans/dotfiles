@@ -15,6 +15,10 @@ alias gst='git status'
 alias gcm='git checkout main'
 alias lg='lazygit'
 
+# use Windows' OpenSSH: `coder config-ssh` writes cmd.exe syntax into ~/.ssh/config
+# (Match exec) that Git Bash's own ssh would run through bash and choke on
+alias ssh='/c/Windows/System32/OpenSSH/ssh.exe'
+
 # oh-my-posh prompt (themes: https://ohmyposh.dev/docs/themes)
 if command -v oh-my-posh >/dev/null 2>&1; then
     eval "$(oh-my-posh init bash --config ~/.mytheme.omp.toml)"

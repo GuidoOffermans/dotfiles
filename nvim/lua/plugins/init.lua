@@ -23,7 +23,6 @@ vim.pack.add {
   gh "lewis6991/gitsigns.nvim",
   gh "windwp/nvim-autopairs",
   gh "christoomey/vim-tmux-navigator",
-  gh "mikavilpas/yazi.nvim",
   gh "stevearc/oil.nvim",
   { src = gh "nvim-treesitter/nvim-treesitter", version = "main" },
   gh "mason-org/mason.nvim",

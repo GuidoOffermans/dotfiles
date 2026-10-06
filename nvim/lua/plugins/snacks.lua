@@ -1,27 +1,15 @@
 require("snacks").setup {
   bigfile = {},
-  dashboard = {},
   explorer = {
     replace_netrw = false, -- oil opens directories
   },
-  indent = {},
   input = {},
   picker = {},
   notifier = {
     timeout = 3000,
   },
   quickfile = {},
-  scope = {},
-  scroll = {},
-  statuscolumn = {},
   words = {},
-  zen = { enabled = false },
-
-  animate = {},
-  git = {},
-  lazygit = {},
-  terminal = {},
-  win = {},
 }
 
 -- { lhs, rhs, desc, mode? }
@@ -82,10 +70,6 @@ local keys = {
   { "<leader>ss", function() Snacks.picker.lsp_symbols() end, "LSP Symbols" },
   { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, "LSP Workspace Symbols" },
   -- other
-  { "<leader>z", function() Snacks.zen() end, "Toggle Zen Mode" },
-  { "<leader>Z", function() Snacks.zen.zoom() end, "Toggle Zoom" },
-  { "<leader>.", function() Snacks.scratch() end, "Toggle Scratch Buffer" },
-  { "<leader>S", function() Snacks.scratch.select() end, "Select Scratch Buffer" },
   { "<leader>bd", function() Snacks.bufdelete() end, "Delete Buffer" },
   { "<leader>cR", function() Snacks.rename.rename_file() end, "Rename File" },
   { "<leader>gB", function() Snacks.gitbrowse() end, "Git Browse", { "n", "v" } },
@@ -95,37 +79,10 @@ local keys = {
   { "<c-_>", function() Snacks.terminal.toggle() end, "which_key_ignore" },
   { "]]", function() Snacks.words.jump(vim.v.count1) end, "Next Reference", { "n", "t" } },
   { "[[", function() Snacks.words.jump(-vim.v.count1) end, "Prev Reference", { "n", "t" } },
-  {
-    "<leader>N",
-    function()
-      Snacks.win {
-        file = vim.api.nvim_get_runtime_file("doc/news.txt", false)[1],
-        width = 0.6,
-        height = 0.6,
-        wo = {
-          spell = false,
-          wrap = false,
-          signcolumn = "yes",
-          statuscolumn = " ",
-          conceallevel = 3,
-        },
-      }
-    end,
-    "Neovim News",
-  },
 }
 for _, k in ipairs(keys) do
   vim.keymap.set(k[4] or "n", k[1], k[2], vim.tbl_extend("force", { desc = k[3] }, k[5] or {}))
 end
-
--- debugging globals
-_G.dd = function(...)
-  Snacks.debug.inspect(...)
-end
-_G.bt = function()
-  Snacks.debug.backtrace()
-end
-vim.print = _G.dd -- Override print to use snacks for `:=` command
 
 -- toggles
 Snacks.toggle.option("spell", { name = "Spelling" }):map "<leader>us"
@@ -139,5 +96,3 @@ Snacks.toggle
 Snacks.toggle.treesitter():map "<leader>uT"
 Snacks.toggle.option("background", { off = "light", on = "dark", name = "Dark Background" }):map "<leader>ub"
 Snacks.toggle.inlay_hints():map "<leader>uh"
-Snacks.toggle.indent():map "<leader>ug"
-Snacks.toggle.dim():map "<leader>uD"

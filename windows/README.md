@@ -7,7 +7,7 @@ Stow packages for Windows, used from Git Bash. Also links the shared `ohmyposh` 
 | `bash` | `~` (Git Bash `.bashrc` / `.bash_profile`, ble.sh's `.blerc`) |
 | `git` | `~/.config/git/config`: Windows-only git settings (LF line endings, real symlinks, long paths) |
 | `windows-terminal` | `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState` |
-| `nvim` (from `config/.config`) | `~/.config/nvim`; plugins via `vim.pack`, pinned in `nvim-pack-lock.json` |
+| `nvim` (from the repo root) | `~/.config/nvim`; plugins via `vim.pack`, pinned in `nvim-pack-lock.json` |
 
 ## POSIX-like behaviour
 

@@ -59,7 +59,7 @@ if ($wslInstalled) {
 
 # --- User environment ---------------------------------------------------------
 # Point XDG-aware tools (nvim, git, gh, lazygit, ...) at ~/.config instead of
-# %APPDATA% / %LOCALAPPDATA%, matching Mac/Linux so config/.config can be shared
+# %APPDATA% / %LOCALAPPDATA%, matching Mac/Linux so the app configs can be shared
 Step 'XDG_CONFIG_HOME'
 $xdg = "$env:USERPROFILE\.config"
 if ([Environment]::GetEnvironmentVariable('XDG_CONFIG_HOME', 'User') -eq $xdg) {

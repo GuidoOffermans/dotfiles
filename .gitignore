@@ -1,3 +1,12 @@
 __pycache__
 .DS_Store
 .idea/
+
+# Dracula Pro is a paid theme; keep its files local, out of the public repo.
+# Drop the zip in dracula/ and run dracula/install.sh to sort it into these.
+dracula/*.zip
+ghostty/themes/dracula-pro*
+alacritty/themes/dracula-pro*
+nvim/colors/dracula-pro*
+nvim/autoload/
+doom/themes/dracula-pro*

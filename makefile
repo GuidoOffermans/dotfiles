@@ -1,8 +1,8 @@
 # Packages linked straight into ~
 HOME_PACKAGES := bash bin ohmyposh zsh
 # Every other top-level dir is an app config, linked into ~/.config/<name>.
-# windows/ is its own stow dir; see windows/install.sh
-CONFIG_PACKAGES := $(filter-out $(HOME_PACKAGES) windows,$(patsubst %/,%,$(wildcard */)))
+# windows/ is its own stow dir (see windows/install.sh); dracula/ holds the theme installer
+CONFIG_PACKAGES := $(filter-out $(HOME_PACKAGES) windows dracula,$(patsubst %/,%,$(wildcard */)))
 
 # $(1): stow mode (--restow, --delete or --adopt)
 define stow_all

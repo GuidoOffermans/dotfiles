@@ -1,7 +1,10 @@
-require("ember").setup {
-  variant = "ember-soft", -- "ember" | "ember-soft" | "ember-light" | "ember-lighter" | "ember-auto"
-}
-vim.cmd.colorscheme "ember-soft"
+-- Follow the OS appearance: Nvim sets 'background' from the terminal's colors at
+-- startup and again whenever the terminal reports a light/dark switch.
+local function apply_theme()
+  vim.cmd.colorscheme(vim.o.background == "light" and "dracula-pro-alucard" or "dracula-pro-nosferatu")
+end
+vim.api.nvim_create_autocmd("OptionSet", { pattern = "background", callback = apply_theme })
+apply_theme()
 
 require("gitsigns").setup()
 

@@ -40,7 +40,6 @@ final_space = true
       
   [[blocks.segments]]
     template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
-    foreground = 'p:grey'
     background = 'transparent'
     type = 'git'
     style = 'plain'

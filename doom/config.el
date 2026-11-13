@@ -45,7 +45,14 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 ;; (setq doom-theme 'doom-one)
-(setq doom-theme 'catppuccin)
+;; Dracula Pro variants live in ./themes (dracula-pro-pro, dracula-pro-buffy, ...)
+(add-to-list 'custom-theme-load-path (expand-file-name "themes/" doom-user-dir))
+(setq doom-theme 'dracula-pro-nosferatu)
+;; Follow macOS light/dark (emacs-plus / emacs-mac provide this hook)
+(add-hook 'ns-system-appearance-change-functions
+          (lambda (appearance)
+            (mapc #'disable-theme custom-enabled-themes)
+            (load-theme (if (eq appearance 'light) 'dracula-pro-alucard 'dracula-pro-nosferatu) t)))
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)

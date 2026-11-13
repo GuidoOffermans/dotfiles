@@ -214,7 +214,7 @@
     {
         "defaults": 
         {
-            "colorScheme": "Ember Soft",
+            "colorScheme": { "dark": "Dracula Pro Nosferatu", "light": "Dracula Pro Alucard" },
             "font": 
             {
                 "face": "JetBrainsMono NF"

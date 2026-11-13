@@ -50,4 +50,9 @@ mkdir -p "$repo/doom/themes"
 cp "$t"/emacs/*-theme.el "$repo/doom/themes/"
 echo "  doom/themes"
 
+# Zed
+mkdir -p "$repo/zed/themes"
+cp "$t"/zed/dracula-pro.json "$repo/zed/themes/"
+echo "  zed/themes"
+
 echo "Done. Restart the apps (or reload their config) to pick up changes."

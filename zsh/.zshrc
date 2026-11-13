@@ -139,9 +139,6 @@ eval "$(zoxide init zsh)"
 eval "$(oh-my-posh init zsh --config ~/.mytheme.omp.toml)"
 eval "$(devbox global shellenv)"
 
-
-command -v thefuck >/dev/null && eval "$(thefuck --alias)"
-
 export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="/Users/guidooffermans/Games/Odin:$PATH"

@@ -1,0 +1,2 @@
+# Hosts a VM with the gh layer can reach on the allowlist tier, one rule per line: example.com,
+# *.example.com (any subdomain), host:port, an address or CIDR, !rule (deny).

@@ -7,7 +7,7 @@ Symlinked into place with [GNU Stow](https://www.gnu.org/software/stow/).
 | Dir | Target |
 |---|---|
 | `bash`, `bin`, `ohmyposh`, `zsh` | `~` |
-| every other top-level dir (`nvim`, `tmux`, `ghostty`, `aerospace`, ...) | `~/.config/<dir>` |
+| every other top-level dir (`nvim`, `tmux`, `ghostty`, ...) | `~/.config/<dir>` |
 | `windows` | Windows setup from Git Bash, see [windows/README.md](windows/README.md) |
 
 Adding an app config is just a new top-level dir named after its `~/.config` folder; `make` picks it up.

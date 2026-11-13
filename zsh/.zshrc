@@ -135,7 +135,6 @@ bindkey -M viins '\es' sesh-sessions
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
-# eval "$(zellij setup --generate-auto-start zsh)"
 eval "$(oh-my-posh init zsh --config ~/.mytheme.omp.toml)"
 eval "$(devbox global shellenv)"
 

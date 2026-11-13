@@ -57,6 +57,8 @@ final_space = true
     [blocks.segments.properties]
       cache_duration = 'none'
       style = 'full'
+      # devvm VMs keep the Mac path for projects, outside the VM's own home, so show it as ~ there too
+      mapped_locations = { '/Users/guidooffermans' = '~' }
 
   [[blocks.segments]]
   template = '{{ if .Env.IN_NIX_SHELL }} ❄️{{ end }}'

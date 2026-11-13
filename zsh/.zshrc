@@ -132,6 +132,21 @@ bindkey -M emacs '\es' sesh-sessions
 bindkey -M vicmd '\es' sesh-sessions
 bindkey -M viins '\es' sesh-sessions
 
+# devvm VMs don't know Ghostty's terminal type (xterm-ghostty), so clear, less
+# and TUIs fail there. Run this in a project folder to copy Ghostty's own
+# terminfo into that folder's VM (into the VM user's ~/.terminfo, no root).
+function devvm-terminfo() {
+  local host terminfo="${GHOSTTY_RESOURCES_DIR:-/Applications/Ghostty.app/Contents/Resources}/terminfo"
+  host=$(command devvm host 2>&1 | sed -n 's/^Connect with ssh \([^ ,]*\).*/\1/p')
+  if [[ -z $host ]]; then
+    echo "devvm-terminfo: this folder has no devvm VM" >&2
+    return 1
+  fi
+  TERMINFO=$terminfo infocmp -x xterm-ghostty \
+    | ssh -F ~/.local/share/devvm/ssh_config "$host" 'tic -x - 2>/dev/null' \
+    && echo "Installed Ghostty's terminfo in $host"
+}
+
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"

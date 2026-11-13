@@ -3,6 +3,8 @@
 export PATH="$HOME/bin:$PATH"
 export PATH="$PATH:/Users/guidooffermans/.dotnet/tools"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/go/bin:$HOME/Library/pnpm"
 
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -34,6 +36,8 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+# The default fg=8 is white in Dracula Pro Alucard (light); this purple-grey reads on both light and dark
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#7970A9'
 zinit light Aloxaf/fzf-tab
 
 # Load completions
@@ -136,7 +140,7 @@ eval "$(oh-my-posh init zsh --config ~/.mytheme.omp.toml)"
 eval "$(devbox global shellenv)"
 
 
-eval $(thefuck --alias)
+command -v thefuck >/dev/null && eval "$(thefuck --alias)"
 
 export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"

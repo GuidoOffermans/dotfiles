@@ -1,5 +1,5 @@
 # Packages linked straight into ~
-HOME_PACKAGES := bash bin ohmyposh zsh
+HOME_PACKAGES := bash ohmyposh zsh
 # Every other top-level dir is an app config, linked into ~/.config/<name>.
 # windows/ is its own stow dir (see windows/install.sh); dracula/ holds the theme installer
 CONFIG_PACKAGES := $(filter-out $(HOME_PACKAGES) windows dracula,$(patsubst %/,%,$(wildcard */)))

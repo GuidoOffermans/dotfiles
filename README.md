@@ -6,7 +6,7 @@ Symlinked into place with [GNU Stow](https://www.gnu.org/software/stow/).
 
 | Dir | Target |
 |---|---|
-| `bash`, `bin`, `ohmyposh`, `zsh` | `~` |
+| `bash`, `ohmyposh`, `zsh` | `~` |
 | every other top-level dir (`nvim`, `tmux`, `ghostty`, ...) | `~/.config/<dir>` |
 | `windows` | Windows setup from Git Bash, see [windows/README.md](windows/README.md) |
 
